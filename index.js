@@ -27,24 +27,23 @@ function returnLastTwoDrivers() {
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
 function createFareMultiplier() {
-  function multiplier(x) {
-    const a = x * x;
+  function multiplier(int) {
+    const a = int * int;
+    // console.log(a);
     return a;
   }
   // console.log(multiplier);
   return multiplier;
 }
 
-function fareDoubler(x) {
-  const b = x * 2;
-  // console.log(b);
-  return b;
-}
+const fareDoubler = function (createFareMultiplier) {
+  return createFareMultiplier * 2;
+};
 
-function fareTripler(x) {
-  const high = x * 3;
-  return high;
-}
+const fareTripler = function (createFareMultiplier) {
+  return createFareMultiplier * 3;
+};
+
 function selectDifferentDrivers(arrayOfDrivers, funct) {
   return funct();
 }
